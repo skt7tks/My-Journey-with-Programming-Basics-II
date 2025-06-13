@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+stack <int> st;
+main(){
+cout<<boolalpha<<st.empty()<<endl;
+st.push(37);
+st.push(22);
+st.push(29);
+cout<<st.size()<<endl;
+st.pop();
+cout<<st.top()<<endl;
+st.pop();
+cout<<boolalpha<<st.empty()<<endl;
+st.push(16);
+cout<<st.size()<<endl;
+}
