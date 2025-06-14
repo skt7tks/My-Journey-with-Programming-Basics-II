@@ -1,0 +1,17 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+int n=10, arr[] = {4, 7, 11, 13, 16, 17, 21, 26, 29, 35}; 
+
+int binsearch(int p, int r, int num) { 
+  if (p <= r) { int mid = (p + r)/2; 
+   if (arr[mid] == num) return mid ; 
+   if (arr[mid] > num) return binsearch(p, mid-1, num); 
+   if (arr[mid] < num) return binasearch(mid+1, r, num);
+ } 
+return -1; } 
+
+int main() { 
+cin>>num; 
+int index = binsearch (0, n-1, num); 
+if(index == -1) cout<< num <<" is not present"; 
+else cout<< num <<" is present at index "<< index ; } 
