@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int x[8];
+void print (){
+   for (int j=0; j<8; j++)
+    cout<<x[j]+1;
+    cout<<endl;
+}
+int is_free (int ix, int iy){
+  for (int i=0; i<iy; i++)
+    if ((x[i]==ix) || (abs(x[i]-ix)==abs(i-iy))) return 0;
+  return 1;
+}
+void svla (int n){
+  if (n==8) print(); else
+     for (int i=0; i<8; i++)
+      if (is_free(i,n)) {
+        x[n]=i;
+        svla (n+1);
+    }  }
+int main (){
+  svla (0);
+}
