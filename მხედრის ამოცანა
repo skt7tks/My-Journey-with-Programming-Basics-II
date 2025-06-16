@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+int i1,j1,n, d[12][12], c[8][2]={-2,1,-1,2,1,2,2,1,2,-1,1,-2,-1,-2,-2,-1};
+ 
+void print_board(){
+for (i1=2; i1<=9; i1++) {
+    for (j1=2; j1<=9; j1++) { printf ("%4d",d[i1][j1]); }
+printf ("\n"); }
+system("PAUSE"); }
+ 
+void mxedari(int i,int j,int n){
+int k;
+if (n>=64) print_board();
+   for (k=0; k<8; k++){
+        if (d[i+c[k][0]][j+c[k][1]]==-1)
+            { d[i+c[k][0]][j+c[k][1]]=n+1; 
+            mxedari (i+c[k][0],j+c[k][1],n+1); }
+    }
+  d[i][j]=-1; n=n-1;
+}
+ 
+main() {
+   for (i1=2; i1<=9; i1++)
+      for (j1=2; j1<=9; j1++) d[i1][j1]=-1;
+   d[2][2]=1;
+   mxedari (2,2,1); 
+}
