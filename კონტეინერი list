@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main (){
+  list<int> lst;
+  list<int>::iterator it;
+  for (int i=1; i<=5; ++i)
+    lst.push_back(i);     // 1 2 3 4 5
+  it = lst.begin();
+  ++it;                   // it იტერატორი დგას რიცხვზე 2
+  lst.insert (it,10);     // 1 10 2 3 4 5
+  lst.insert (it,2,20);   // 1 10 20 20 2 3 4 5
+  --it;                   // it იტერატორი დგას მეორე 20-ზე
+  vector<int> vect (2,30);
+  lst.insert(it,vect.begin(),vect.end());//1 10 20 30 30 20 2 3 4 5
+  for (it=lst.begin(); it!=lst.end(); ++it)
+    cout <<*it<<" ";
+ it = lst.begin();
+  ++it; 
+lst=lst.erase(it);          // 1 20 30 30 20 2 3 4 5
+}
